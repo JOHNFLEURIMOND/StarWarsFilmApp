@@ -9,7 +9,6 @@ dist/
 .public
 
 #storybook ts build output
-build/
 
 #Webstorm metadata
 .idea/
