@@ -11,10 +11,8 @@ const App = () => {
       );
       const data = await result.json();
       console.log("data", data);
-
       setMessage(data);
     };
-
     fetchData();
   })
 
