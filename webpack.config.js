@@ -3,10 +3,11 @@ const webpack = require("webpack");
 const BUILD_DIR = path.resolve(__dirname, "./build");
 const APP_DIR = path.resolve(__dirname, "./assets");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    main: ["@babel/polyfill", path.resolve(APP_DIR + "/Main.js")],
+    main: [path.resolve(APP_DIR + "/Main.js")],
   },
   mode: "development",
   devServer: {
@@ -20,14 +21,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: path.resolve(BUILD_DIR, "index.html"),
+      filename: path.resolve(`${BUILD_DIR}/index.html`),
       // Load a custom template (lodash by default)
       template: "index.html",
     }),
-    new webpack.DefinePlugin({
-      APP_VERSION:
-        JSON.stringify(process.env.APP_VERSION) || JSON.stringify("config"),
-    }),
+    new MiniCssExtractPlugin({
+      filename: 'bundle.css',
+    })
   ],
   module: {
     rules: [
@@ -49,10 +49,30 @@ module.exports = {
           },
         ],
       },
-      {},
+      {
+        test: /\.(sa|sc|c)ss$/,
+        exclude: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
     ],
   },
   resolve: {
     extensions: [".jsx", ".js"],
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
   },
 };
