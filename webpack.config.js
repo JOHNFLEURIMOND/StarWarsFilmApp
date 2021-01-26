@@ -27,8 +27,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'bundle.css',
-    })
+    }),
   ],
+  
   module: {
     rules: [
       {

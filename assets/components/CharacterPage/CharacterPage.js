@@ -38,24 +38,47 @@ const useStyles = makeStyles({
 
 const JFHero = () => {
   const classes = useStyles();
+  const [characters, setCharacters] = useState([]);
 
-
-  const [characters, setCharactersName] = useState([]);
-  
   useEffect(() => {
-    getStarWarsFilmTitle();
+    getCharacters();
   }, []);
 
-
-  const getStarWarsFilmTitle = async () => {
-    await axios
-      .get("https://swapi.dev/api/people/")
-      .then((result) => setCharactersName(result.data.results));
+  const getCharacters = async () => {
+    const one = "https://swapi.dev/api/people/?film"
+    let two = "http://swapi.dev/api/people/?page=2"
+    let three = "http://swapi.dev/api/people/?page=3"
+    let four = "http://swapi.dev/api/people/?page=4"
+    let five = "http://swapi.dev/api/people/?page=5"
+    let six = "http://swapi.dev/api/people/?page=6"
+    let seven = "http://swapi.dev/api/people/?page=7"
+    let eight = "http://swapi.dev/api/people/?page=8"
+    await axios.get(one).then(responses => setCharacters(responses.data.results));
+    await axios.get(two).then(responses => setCharacters(responses.data.results));
+    await axios.get(three).then(responses => setCharacters(responses.data.results));
+    await axios.get(four).then(responses => setCharacters(responses.data.results));
+    await axios.get(five).then(responses => setCharacters(responses.data.results));
+    await axios.get(six).then(responses => setCharacters(responses.data.results));
+    await axios.get(seven).then(responses => setCharacters(responses.data.results));
+    await axios.get(eight).then(responses => setCharacters(responses.data.results));
   };
+
+  const findCharactersName = (characters) => {
+    const charactersKeys = Object.entries(characters).forEach(value => {
+      const characterKeyValues = [value[1]["name"], value[1]["films"]];
+      console.log("Character Key Value", characterKeyValues);
+
+      return characterKeyValues;
+    });
+
+    return charactersKeys;
+  };
+
+  findCharactersName(characters);
 
   return (
     <div className={classes.container}>
-      <Header />
+      <Navbar />
       <Hero />
       {/* Hero unit */}
       <Container maxWidth="md">
@@ -71,16 +94,13 @@ const JFHero = () => {
               >
                 <Card>
                   <CardMedia
-                    image="https://source.unsplash.com/random"
+                    image="http://facetheforce.today/?i=1random/400?r=2"
                     title="Image title"
                     className={classes.cardImage}
                   />
                   <CardContent className={classes.h2}>
                     <Typography gutterBottom variant="h5" component="h2">
                       {characters.name}
-                    </Typography>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {characters.films}
                     </Typography>
                   </CardContent>
                 </Card>

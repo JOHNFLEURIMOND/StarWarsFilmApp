@@ -26,7 +26,6 @@ const JFHero = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      {/* Hero unit */}
       <Container maxWidth="sm">
         <Animated
           animationInDelay={0}
