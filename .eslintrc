@@ -18,7 +18,7 @@
   "plugins": ["jest", "prettier", "react", "react-hooks"],
   "extends": ["airbnb", "airbnb/hooks"],
   "rules": {
-      "code": 180,
+      "code": 0,
       "indent": "off",
       "quotes": ["error", "single"],
       "semi": ["error", "always"],

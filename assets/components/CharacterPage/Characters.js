@@ -12,7 +12,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Hero from '../Hero/Hero';
 import Navbar from '../Navbar/Navbar';
 import { fleurimondColors } from '../theme';
-import JFCharacterPage from './CharacterPage';
 
 const useStyles = makeStyles({
   container: {

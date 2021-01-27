@@ -40,10 +40,6 @@ const JFCharacterPage = () => {
   const classes = useStyles();
   const [characters, setCharacters] = useState([]);
 
-  useEffect(() => {
-    getCharacters();
-  }, []);
-
   const getCharacters = async () => {
     const one = 'https://swapi.dev/api/people/?film';
     const two = 'http://swapi.dev/api/people/?page=2';
@@ -62,6 +58,10 @@ const JFCharacterPage = () => {
     await axios.get(seven).then(responses => setCharacters(responses.data.results));
     await axios.get(eight).then(responses => setCharacters(responses.data.results));
   };
+
+  useEffect(() => {
+    getCharacters();
+  }, []);
 
   const findCharactersName = characters => {
     const charactersKeys = Object.entries(characters).forEach(value => {

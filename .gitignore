@@ -2,14 +2,6 @@
 logs
 *.log
 
-#dist folder
-dist/
-
-#storybook output folder
-.public
-
-#storybook ts build output
-
 #Webstorm metadata
 .idea/
 *.iml

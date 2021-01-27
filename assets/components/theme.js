@@ -24,14 +24,14 @@ const fleurimondColors = {
   foam: '#f7fcfe',
   chenin: '#e2e367',
   buttons: {
-      blue: '#1b4677',
-      darkBlue: '#0d223b',
-      lightBlue: '#c6d1dd',
-      lightFuschia: '#dac5d0',
+    blue: '#1b4677',
+    darkBlue: '#0d223b',
+    lightBlue: '#c6d1dd',
+    lightFuschia: '#dac5d0',
   },
   modals: {
-      innerBorders: '#e5e5e5',
-      text: '#333333',
+    innerBorders: '#e5e5e5',
+    text: '#333333',
   },
 };
 
@@ -40,91 +40,91 @@ export { fleurimondColors };
 export default {
   colors: {},
   buttons: {
-      primary: {
-          color: fleurimondColors.white,
-          backgroundColor: fleurimondColors.buttons.blue,
-          borderColor: fleurimondColors.buttons.blue,
+    primary: {
+      color: fleurimondColors.white,
+      backgroundColor: fleurimondColors.buttons.blue,
+      borderColor: fleurimondColors.buttons.blue,
 
-          '&:hover,&:active,&:focus': {
-              backgroundColor: fleurimondColors.buttons.darkBlue,
-              borderColor: fleurimondColors.buttons.darkBlue,
-              color: fleurimondColors.white,
-          },
-
-          '&:disabled': {
-              backgroundColor: fleurimondColors.buttons.lightBlue,
-              borderColor: fleurimondColors.buttons.lightBlue,
-              color: '#ecf0f3',
-          },
+      '&:hover,&:active,&:focus': {
+        backgroundColor: fleurimondColors.buttons.darkBlue,
+        borderColor: fleurimondColors.buttons.darkBlue,
+        color: fleurimondColors.white,
       },
-      secondary: {
-          color: fleurimondColors.buttons.blue,
-          backgroundColor: fleurimondColors.white,
-          borderColor: fleurimondColors.buttons.blue,
 
-          '&:hover,&:active,&:focus': {
-              backgroundColor: '#edf1f5',
-              borderColor: fleurimondColors.buttons.blue,
-              color: fleurimondColors.buttons.blue,
-          },
-
-          '&:disabled': {
-              backgroundColor: fleurimondColors.white,
-              borderColor: fleurimondColors.buttons.lightBlue,
-              color: fleurimondColors.buttons.lightBlue,
-          },
+      '&:disabled': {
+        backgroundColor: fleurimondColors.buttons.lightBlue,
+        borderColor: fleurimondColors.buttons.lightBlue,
+        color: '#ecf0f3',
       },
-      tertiary: {
-          color: fleurimondColors.buttons.blue,
-          backgroundColor: fleurimondColors.white,
-          borderColor: '#dbdbdb',
+    },
+    secondary: {
+      color: fleurimondColors.buttons.blue,
+      backgroundColor: fleurimondColors.white,
+      borderColor: fleurimondColors.buttons.blue,
 
-          '&:hover,&:active,&:focus': {
-              backgroundColor: '#f7f7f7',
-              borderColor: '#cccccc',
-              color: fleurimondColors.buttons.blue,
-          },
-
-          '&:disabled': {
-              backgroundColor: fleurimondColors.white,
-              borderColor: '#e8e8e8',
-              color: fleurimondColors.buttons.lightBlue,
-          },
+      '&:hover,&:active,&:focus': {
+        backgroundColor: '#edf1f5',
+        borderColor: fleurimondColors.buttons.blue,
+        color: fleurimondColors.buttons.blue,
       },
-      urgentPrimary: {
-          color: fleurimondColors.white,
-          backgroundColor: fleurimondColors.fierceFuchsia,
-          borderColor: fleurimondColors.fierceFuchsia,
 
-          '&:hover,&:active,&:focus': {
-              backgroundColor: '#6d1643',
-              borderColor: '#6d1643',
-              color: fleurimondColors.white,
-          },
-
-          '&:disabled': {
-              backgroundColor: fleurimondColors.buttons.lightFuschia,
-              borderColor: fleurimondColors.buttons.lightFuschia,
-              color: '#f5f0f3',
-          },
+      '&:disabled': {
+        backgroundColor: fleurimondColors.white,
+        borderColor: fleurimondColors.buttons.lightBlue,
+        color: fleurimondColors.buttons.lightBlue,
       },
-      urgentSecondary: {
-          color: fleurimondColors.fierceFuchsia,
-          backgroundColor: fleurimondColors.white,
-          borderColor: fleurimondColors.fierceFuchsia,
+    },
+    tertiary: {
+      color: fleurimondColors.buttons.blue,
+      backgroundColor: fleurimondColors.white,
+      borderColor: '#dbdbdb',
 
-          '&:hover,&:active,&:focus': {
-              backgroundColor: '#fdf4f9',
-              borderColor: fleurimondColors.fierceFuchsia,
-              color: fleurimondColors.fierceFuchsia,
-          },
-
-          '&:disabled': {
-              backgroundColor: fleurimondColors.white,
-              borderColor: fleurimondColors.buttons.lightFuschia,
-              color: fleurimondColors.buttons.lightFuschia,
-          },
+      '&:hover,&:active,&:focus': {
+        backgroundColor: '#f7f7f7',
+        borderColor: '#cccccc',
+        color: fleurimondColors.buttons.blue,
       },
+
+      '&:disabled': {
+        backgroundColor: fleurimondColors.white,
+        borderColor: '#e8e8e8',
+        color: fleurimondColors.buttons.lightBlue,
+      },
+    },
+    urgentPrimary: {
+      color: fleurimondColors.white,
+      backgroundColor: fleurimondColors.fierceFuchsia,
+      borderColor: fleurimondColors.fierceFuchsia,
+
+      '&:hover,&:active,&:focus': {
+        backgroundColor: '#6d1643',
+        borderColor: '#6d1643',
+        color: fleurimondColors.white,
+      },
+
+      '&:disabled': {
+        backgroundColor: fleurimondColors.buttons.lightFuschia,
+        borderColor: fleurimondColors.buttons.lightFuschia,
+        color: '#f5f0f3',
+      },
+    },
+    urgentSecondary: {
+      color: fleurimondColors.fierceFuchsia,
+      backgroundColor: fleurimondColors.white,
+      borderColor: fleurimondColors.fierceFuchsia,
+
+      '&:hover,&:active,&:focus': {
+        backgroundColor: '#fdf4f9',
+        borderColor: fleurimondColors.fierceFuchsia,
+        color: fleurimondColors.fierceFuchsia,
+      },
+
+      '&:disabled': {
+        backgroundColor: fleurimondColors.white,
+        borderColor: fleurimondColors.buttons.lightFuschia,
+        color: fleurimondColors.buttons.lightFuschia,
+      },
+    },
   },
   fontSizes: [12, 13, 14, 16, 18, 25],
   space: [0, 5, 10, 20, 40, 80],
