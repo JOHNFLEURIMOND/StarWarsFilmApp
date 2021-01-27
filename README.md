@@ -61,6 +61,7 @@ In App.js, I have the `Homepage` comnponent where I am doing my first `Axios` ap
  ```
 
  once we create axios request for all characters, wait for all axios request to finish, then set state with the characters for the indiviual film.
+ 
 
  ```Promise.all(requests)
     .then(responses => {
