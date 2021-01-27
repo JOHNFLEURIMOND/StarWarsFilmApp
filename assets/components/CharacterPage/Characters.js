@@ -47,7 +47,7 @@ const JFCharacter = () => {
   const [characters, setCharacters] = useState([]);
 
   const getCharacters = () => {
-    // Create axios reuquest for all characters
+    // Create axios request for all characters
     const requests = filmCharacterUrls.map(async url => {
       const request = await axios.get(url);
       return request;
@@ -77,7 +77,9 @@ const JFCharacter = () => {
       <Hero />
       {/* End hero unit */}
       <Container maxWidth="md">
-        <h2>{filmTitle}</h2>
+        <Typography gutterBottom variant="h5" component="h2">
+          {filmTitle}
+        </Typography>
 
         <Grid container spacing={4} style={{ paddingTop: '2.5rem' }}>
           {/* Map thru the state which contains the character Names of selected film and creates a card and renders characters name on the card */}

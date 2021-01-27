@@ -2,13 +2,72 @@
 
 # My Awesome Project
 Starwars films and Character App
+
 # How It's Made :nut_and_bolt:🔨 :hammer::wrench::
 
 
 ## Assignment:
  In the following two slides, you see a rough sketch of a web app made for Star Wars fans. Your mission is to implement this functionality in a React app. The implementation must be responsive and should adapt itself to the screen sizes of mobile/desktop. 
 
-With this assignment, I was to create a app with landing page with a list of all the Star Wars Films. When the Film is selected, you are then routed to another page rendering on a list of the characters from selected film.
+With this assignment, I was to create a app with landing page with a list of all the Star Wars Films. When the Film is selected, you are then routed to another page rendering on a list of the characters from selected film. 
+
+In App.js, I have the `Homepage` comnponent where I am doing my first `Axios` api call for the Star Wars Films. Once I set my state to the data response from the api, I then `Map()` thru the state which contains the films names from the api film and creates a card and renders the title on the card
+ 
+```const [films, setFilmsTitle] = useState([]);
+
+  const getStarWarsFilms = async () => {
+    await axios
+      .get('https://swapi.dev/api/films/')
+      .then(responses => setFilmsTitle(responses.data.results));
+  };
+  ```
+
+
+
+ With `React-Router-Dom` & a hook called `Link` I was able to use state of the Link to pass that data of characters in each film ` filmCharacters: film.characters,`  and film title `filmTitle: film.title,`, I only need the Film characters which is a list of character url endpoints and the name of the film from my api call so I can pass it to the state for the next page which is `Character.js`.
+
+```<Card>
+    <CardMedia
+         image="http://facetheforce.today/?i=1random/400?r=2"
+         title="Image title"
+         className={classes.cardImage}
+         />
+     <CardContent className={classes.h2}>
+       <Typography gutterBottom variant="h5" component="h2" key={film.url}>
+         <Link
+         to={{
+         pathname: '/CharacterPage/:id',
+         state: {
+          filmCharacters: film.characters,
+          filmTitle: film.title,
+          },
+          }}
+          className={classes.a}
+           >
+        {film.title}
+          </Link>
+        </Typography>
+    </CardContent>
+  </Card>
+```
+
+  Once the user clicks on that `Link` for the film, the user will then be routed to `Character.js` and here I imported `useHistory` and with this hook from `React-Router-Dom` I have access to data passed from the `Homepage component` in `App.js`. By declaring the `useHistory()` in the variable `history` then getting the state value in location of the history object like so `history.location.state.filmCharacters`. remember we want the list of characters from that selected film so I made a function to handle the url endpoints of characters in the Films data object.
+
+```const getCharacters = () => {
+    const requests = filmCharacterUrls.map(async url => {
+      const request = await axios.get(url);
+      return request;
+    });
+ ```
+
+ once we create axios request for all characters, wait for all axios request to finish, then set state with the characters for the indiviual film.
+
+ ```Promise.all(requests)
+    .then(responses => {
+    const characterNameArray = responses.map(response => response.data.name);
+      return setCharacters(characterNameArray);
+      })
+  ```
 
 ## Data:
  You will fetch the StarWars data from the public API https://swapi.dev/
