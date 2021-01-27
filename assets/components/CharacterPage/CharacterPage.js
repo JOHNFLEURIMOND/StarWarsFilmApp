@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Animated } from "react-animated-css";
-import axios from "axios";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Navbar from "../Navbar/Navbar";
-import Hero from "../Hero/Hero";
-import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import { fleurimondColors } from "../theme";
+import React, { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Animated } from 'react-animated-css';
+import axios from 'axios';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Hero from '../Hero/Hero';
+import Navbar from '../Navbar/Navbar';
+import { fleurimondColors } from '../theme';
 
 const useStyles = makeStyles({
   container: {
-    boxSizing: "border-box",
-    fontSize: "1rem",
+    boxSizing: 'border-box',
+    fontSize: '1rem',
     color: fleurimondColors.leapingLemon,
-    lineHeight: "normal",
+    lineHeight: 'normal',
     fontWeight: 600,
-    padding: "64px 20px 48px",
-    width: "100%",
+    padding: '64px 20px 48px',
+    width: '100%',
     backgroundColor: fleurimondColors.white,
-    textAlign: "center",
-    display: "block",
+    textAlign: 'center',
+    display: 'block',
   },
 
   cardImage: {
-    paddingTop: "59%",
+    paddingTop: '59%',
   },
 
   h2: {
-    textAlign: "center",
-    padding: "23px 2px 13px 0 !important",
+    textAlign: 'center',
+    padding: '23px 2px 13px 0 !important',
   },
 });
 
-const JFHero = () => {
+const JFCharacterPage = () => {
   const classes = useStyles();
   const [characters, setCharacters] = useState([]);
 
@@ -45,14 +45,14 @@ const JFHero = () => {
   }, []);
 
   const getCharacters = async () => {
-    const one = "https://swapi.dev/api/people/?film"
-    let two = "http://swapi.dev/api/people/?page=2"
-    let three = "http://swapi.dev/api/people/?page=3"
-    let four = "http://swapi.dev/api/people/?page=4"
-    let five = "http://swapi.dev/api/people/?page=5"
-    let six = "http://swapi.dev/api/people/?page=6"
-    let seven = "http://swapi.dev/api/people/?page=7"
-    let eight = "http://swapi.dev/api/people/?page=8"
+    const one = 'https://swapi.dev/api/people/?film';
+    const two = 'http://swapi.dev/api/people/?page=2';
+    const three = 'http://swapi.dev/api/people/?page=3';
+    const four = 'http://swapi.dev/api/people/?page=4';
+    const five = 'http://swapi.dev/api/people/?page=5';
+    const six = 'http://swapi.dev/api/people/?page=6';
+    const seven = 'http://swapi.dev/api/people/?page=7';
+    const eight = 'http://swapi.dev/api/people/?page=8';
     await axios.get(one).then(responses => setCharacters(responses.data.results));
     await axios.get(two).then(responses => setCharacters(responses.data.results));
     await axios.get(three).then(responses => setCharacters(responses.data.results));
@@ -63,10 +63,10 @@ const JFHero = () => {
     await axios.get(eight).then(responses => setCharacters(responses.data.results));
   };
 
-  const findCharactersName = (characters) => {
+  const findCharactersName = characters => {
     const charactersKeys = Object.entries(characters).forEach(value => {
-      const characterKeyValues = [value[1]["name"], value[1]["films"]];
-      console.log("Character Key Value", characterKeyValues);
+      const characterKeyValues = [value[1].name, value[1].films];
+      console.log('Character Key Value', characterKeyValues);
 
       return characterKeyValues;
     });
@@ -113,4 +113,4 @@ const JFHero = () => {
   );
 };
 
-export default JFHero;
+export default JFCharacterPage;

@@ -1,24 +1,24 @@
-import React from "react";
-import { Animated } from "react-animated-css";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import { Animated } from 'react-animated-css';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 
-import { fleurimondColors } from "../theme";
+import { fleurimondColors } from '../theme';
 
 const useStyles = makeStyles({
   container: {
-    boxSizing: "border-box",
-    fontSize: "1rem",
+    boxSizing: 'border-box',
+    fontSize: '1rem',
     color: fleurimondColors.leapingLemon,
-    lineHeight: "normal",
+    lineHeight: 'normal',
     fontWeight: 600,
-    padding: "64px 20px 48px",
-    height: "400px",
-    width: "100%",
+    padding: '64px 20px 48px',
+    height: '400px',
+    width: '100%',
     backgroundColor: fleurimondColors.black,
-    textAlign: "center",
-    display: "block",
+    textAlign: 'center',
+    display: 'block',
   },
 });
 
