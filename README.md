@@ -13,7 +13,8 @@ With this assignment, I was to create a app with landing page with a list of all
 
 In App.js, I have the `Homepage` comnponent where I am doing my first `Axios` api call for the Star Wars Films. Once I set my state to the data response from the api, I then `Map()` thru the state which contains the films names from the api film and creates a card and renders the title on the card
  
-```const [films, setFilmsTitle] = useState([]);
+```
+const [films, setFilmsTitle] = useState([]);
 
   const getStarWarsFilms = async () => {
     await axios
@@ -26,7 +27,8 @@ In App.js, I have the `Homepage` comnponent where I am doing my first `Axios` ap
 
  With `React-Router-Dom` & a hook called `Link` I was able to use state of the Link to pass that data of characters in each film ` filmCharacters: film.characters,`  and film title `filmTitle: film.title,`, I only need the Film characters which is a list of character url endpoints and the name of the film from my api call so I can pass it to the state for the next page which is `Character.js`.
 
-```<Card>
+```
+<Card>
     <CardMedia
          image="http://facetheforce.today/?i=1random/400?r=2"
          title="Image title"
@@ -53,7 +55,8 @@ In App.js, I have the `Homepage` comnponent where I am doing my first `Axios` ap
 
   Once the user clicks on that `Link` for the film, the user will then be routed to `Character.js` and here I imported `useHistory` and with this hook from `React-Router-Dom` I have access to data passed from the `Homepage component` in `App.js`. By declaring the `useHistory()` in the variable `history` then getting the state value in location of the history object like so `history.location.state.filmCharacters`. remember we want the list of characters from that selected film so I made a function to handle the url endpoints of characters in the Films data object.
 
-```const getCharacters = () => {
+```
+const getCharacters = () => {
     const requests = filmCharacterUrls.map(async url => {
       const request = await axios.get(url);
       return request;
@@ -61,9 +64,10 @@ In App.js, I have the `Homepage` comnponent where I am doing my first `Axios` ap
  ```
 
  once we create axios request for all characters, wait for all axios request to finish, then set state with the characters for the indiviual film.
- 
 
- ```Promise.all(requests)
+
+ ```
+ Promise.all(requests)
     .then(responses => {
     const characterNameArray = responses.map(response => response.data.name);
       return setCharacters(characterNameArray);

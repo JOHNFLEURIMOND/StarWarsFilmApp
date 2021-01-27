@@ -13,11 +13,11 @@
         "prettier": "prettier assets/**/**/*.{js,css} --write",
         "prettier-watch": "onchange  '**/*.{js}' -- prettier --write {{changed}}"
     },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint assets --fix"
-    }
-  },
+    "husky": {
+        "hooks": {
+            "pre-commit": "tsdx lint assets --fix"
+        }
+    },
     "keywords": [
         "John",
         "Fleurimond"
