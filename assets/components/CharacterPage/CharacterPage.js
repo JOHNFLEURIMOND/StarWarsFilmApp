@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Animated } from 'react-animated-css';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -10,6 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hero from '../Hero/Hero';
 import Navbar from '../Navbar/Navbar';
+
 import { fleurimondColors } from '../theme';
 
 const useStyles = makeStyles({
@@ -71,6 +73,7 @@ const useStyles = makeStyles({
 const JFCharacterPage = () => {
   const classes = useStyles();
   const [characters, setCharacters] = useState([]);
+  const history = useHistory();
 
   const getCharacters = async () => {
     const one = 'https://swapi.dev/api/people/';
@@ -110,52 +113,52 @@ const JFCharacterPage = () => {
 
   return (
     <div className={classes.container}>
-    <Navbar />
-    {/* Hero unit */}
-    <Hero />
-    {/* End hero unit */}
-    <Container maxWidth="md">
-      <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2" className={classes.title}>
-        {filmTitle}
-      </Typography>
+      <Navbar />
+      {/* Hero unit */}
+      <Hero />
+      {/* End hero unit */}
+      <Container maxWidth="md">
+        <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2" className={classes.title}>
+         Characters
+        </Typography>
 
-      <Grid container spacing={4} style={{ paddingTop: '2.5rem' }}>
-        {/* Map thru the state which contains the character Names of selected film and creates a card and renders characters name on the card */}
+        <Grid container spacing={4} style={{ paddingTop: '2.5rem' }}>
+          {/* Map thru the state which contains the character Names of selected film and creates a card and renders characters name on the card */}
 
-        {characters.map((character, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4}>
-            <Animated
-              animationInDelay={0}
-              animationIn="slideInUp"
-              animationOut="slideOutDown"
-              isVisible
-            >
-              <Card>
-                <CardMedia
-                  title="Starwars title"
-                  image="https://facetheforce.today/?i=1random/400?r=2"
-                  className={classes.cardImage}
-                />
-                <CardContent className={classes.h2}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {/* Card Info */}
-                    {character}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Animated>
-          </Grid>
-        ))}
-      </Grid>
-      <button
-        onClick={() => history.push("/", { from: "Characters" })}
-        className={classes.button}
-      >
-        HomePage
+          {characters.map((character, index) => (
+            <Grid item key={index} xs={12} sm={6} md={4}>
+              <Animated
+                animationInDelay={0}
+                animationIn="slideInUp"
+                animationOut="slideOutDown"
+                isVisible
+              >
+                <Card>
+                  <CardMedia
+                    title="Starwars title"
+                    image="https://facetheforce.today/?i=1random/400?r=2"
+                    className={classes.cardImage}
+                  />
+                  <CardContent className={classes.h2}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {/* Card Info */}
+                      {character.name}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Animated>
+            </Grid>
+          ))}
+        </Grid>
+        <button
+          onClick={() => history.push("/", { from: "Characters" })}
+          className={classes.button}
+        >
+          HomePage
           </button>
 
-    </Container>
-  </div>
+      </Container>
+    </div>
   );
 };
 

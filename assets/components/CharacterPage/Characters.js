@@ -11,6 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hero from '../Hero/Hero';
 import Navbar from '../Navbar/Navbar';
+
 import "./../../index.css";
 
 import { fleurimondColors } from '../theme';

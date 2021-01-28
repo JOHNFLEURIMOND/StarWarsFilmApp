@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 
 import { fleurimondColors } from '../theme';
 
@@ -28,9 +27,7 @@ const JFHero = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Container maxWidth="sm">
-   
-      </Container>
+  
     </div>
   );
 };

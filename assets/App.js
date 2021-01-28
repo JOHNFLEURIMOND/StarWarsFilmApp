@@ -10,9 +10,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
+import Footer from './components/Footer/Footer';
 import CharacterPage from './components/CharacterPage/CharacterPage';
 import Characters from './components/CharacterPage/Characters';
 import "./index.css";
@@ -89,7 +89,6 @@ const Homepage = () => {
                 >
                   {/* Card unit */}
                   <Card>
-                    <CardMedia />
                     <CardContent className={classes.h2}>
                       <Typography gutterBottom variant="h5" component="h2" key={film.url}>
                         <Link
@@ -114,6 +113,7 @@ const Homepage = () => {
           </Grid>
         </Container>
       </div>
+      <Footer />
     </div>
   );
 };
