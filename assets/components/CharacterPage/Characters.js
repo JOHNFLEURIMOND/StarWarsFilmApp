@@ -11,12 +11,15 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hero from '../Hero/Hero';
 import Navbar from '../Navbar/Navbar';
+import "./../../index.css";
+
 import { fleurimondColors } from '../theme';
 
 const useStyles = makeStyles({
   container: {
     boxSizing: 'border-box',
     fontSize: '1rem',
+    margin: 0,
     color: fleurimondColors.leapingLemon,
     lineHeight: 'normal',
     fontWeight: 600,
@@ -95,7 +98,7 @@ const JFCharacter = () => {
                 <Card>
                   <CardMedia
                     title="Starwars title"
-                    image="http://facetheforce.today/?i=1random/400?r=2"
+                    image="https://facetheforce.today/?i=1random/400?r=2"
                     className={classes.cardImage}
                   />
                   <CardContent className={classes.h2}>
@@ -109,6 +112,12 @@ const JFCharacter = () => {
             </Grid>
           ))}
         </Grid>
+        <button
+          onClick={() => history.push("/", { from: "Characters" })}
+        >
+          HomePage
+            </button>
+      
       </Container>
     </div>
   );

@@ -64,11 +64,6 @@ const JFHeader = () => {
                   Characters
                 </Link>
               </li>
-              <li className={classes.li}>
-                <Link to="/SignUp" className={classes.a}>
-                  About Us
-                </Link>
-              </li>
             </ul>
           </Typography>
         </Toolbar>

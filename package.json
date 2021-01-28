@@ -2,7 +2,7 @@
     "name": "1webpack",
     "version": "1.0.0",
     "description": "",
-    "proxy": "http://localhost:8080",
+    "proxy": "https://localhost:8080",
     "main": "Main.js",
     "scripts": {
         "babel-node": "babel-node --presets='@babel/preset-env' --ignore='foo|bar|baz'",

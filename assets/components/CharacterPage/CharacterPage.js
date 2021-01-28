@@ -14,6 +14,7 @@ import { fleurimondColors } from '../theme';
 
 const useStyles = makeStyles({
   container: {
+    margin: 0,
     boxSizing: 'border-box',
     fontSize: '1rem',
     color: fleurimondColors.leapingLemon,
@@ -41,7 +42,7 @@ const JFCharacterPage = () => {
   const [characters, setCharacters] = useState([]);
 
   const getCharacters = async () => {
-    const one = 'https://swapi.dev/api/people/?film';
+    const one = 'https://swapi.dev/api/people/';
     const two = 'http://swapi.dev/api/people/?page=2';
     const three = 'http://swapi.dev/api/people/?page=3';
     const four = 'http://swapi.dev/api/people/?page=4';
@@ -108,6 +109,11 @@ const JFCharacterPage = () => {
             </Grid>
           ))}
         </Grid>
+        <button
+          onClick={() => history.push("/", { from: "Characters" })}
+        >
+          HomePage
+            </button>
       </Container>
     </div>
   );

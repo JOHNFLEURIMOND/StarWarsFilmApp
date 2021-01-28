@@ -3,6 +3,7 @@ import {
  Link, Route, BrowserRouter as Router, Switch 
 } from 'react-router-dom';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 import { Animated } from 'react-animated-css';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -15,7 +16,7 @@ import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import CharacterPage from './components/CharacterPage/CharacterPage';
 import Characters from './components/CharacterPage/Characters';
-
+import "./index.css";
 import { fleurimondColors } from './components/theme';
 
 const useStyles = makeStyles({
@@ -54,7 +55,7 @@ const Homepage = () => {
   useEffect(() => {
     getStarWarsFilms();
   }, []);
-
+  
   return (
     <div className={classes.root}>
       <Navbar />
@@ -74,7 +75,7 @@ const Homepage = () => {
                 >
                   <Card>
                     <CardMedia
-                      image="http://facetheforce.today/?i=1random/400?r=2"
+                      image="https://facetheforce.today/?i=1random/400?r=2"
                       title="Image title"
                       className={classes.cardImage}
                     />
@@ -90,6 +91,7 @@ const Homepage = () => {
                           }}
                           className={classes.a}
                         >
+                         
                           {film.title}
                         </Link>
                       </Typography>
