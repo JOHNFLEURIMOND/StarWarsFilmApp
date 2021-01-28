@@ -17,17 +17,18 @@ import { fleurimondColors } from '../theme';
 
 const useStyles = makeStyles({
   container: {
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     boxSizing: 'border-box',
     fontSize: '1rem',
     margin: 0,
-    color: fleurimondColors.leapingLemon,
+    color: fleurimondColors.black,
     lineHeight: 'normal',
     fontWeight: 600,
-    padding: '64px 20px 48px',
     width: '100%',
     backgroundColor: fleurimondColors.white,
     textAlign: 'center',
     display: 'block',
+    padding: '5% 0 10% ',
   },
 
   cardImage: {
@@ -38,6 +39,37 @@ const useStyles = makeStyles({
     textAlign: 'center',
     padding: '23px 2px 13px 0 !important',
   },
+  button: {
+    marginTop: "5rem",
+    fontSize: "13px",
+    padding: "8px 11px",
+    color: fleurimondColors.leapingLemon,
+    backgroundColor: fleurimondColors.black,
+    borderColor: fleurimondColors.black,
+    borderRadius: '3px',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    cursor: 'pointer',
+    display: 'inline-block',
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    letterSpacing: '0.02em',
+    lineHeight: 1,
+
+    '&:hover,&:active,&:focus': {
+      backgroundColor: fleurimondColors.leapingLemon,
+      borderColor: fleurimondColors.leapingLemon,
+      color: fleurimondColors.black,
+      textDecoration: 'none',
+    },
+
+    '&:disabled': {
+      backgroundColor: fleurimondColors.foam,
+      borderColor: fleurimondColors.foam,
+      color: "#ecf0f3",
+      opacity: 1,
+      pointerEvents: 'none', // counterintuitive but this allows hover events to fire on disabled buttons (e.g. to show a tooltip) - https://jakearchibald.com/2017/events-and-disabled-form-fields/
+    },
+  }
 });
 
 const JFCharacter = () => {
@@ -80,7 +112,7 @@ const JFCharacter = () => {
       <Hero />
       {/* End hero unit */}
       <Container maxWidth="md">
-        <Typography gutterBottom variant="h5" component="h2">
+        <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2">
           {filmTitle}
         </Typography>
 
@@ -114,10 +146,11 @@ const JFCharacter = () => {
         </Grid>
         <button
           onClick={() => history.push("/", { from: "Characters" })}
+          className={classes.button}
         >
           HomePage
             </button>
-      
+
       </Container>
     </div>
   );

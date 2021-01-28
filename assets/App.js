@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {
- Link, Route, BrowserRouter as Router, Switch 
+  Link, Route, BrowserRouter as Router, Switch
 } from 'react-router-dom';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
 import { Animated } from 'react-animated-css';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -21,14 +20,14 @@ import { fleurimondColors } from './components/theme';
 
 const useStyles = makeStyles({
   root: {
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     boxSizing: 'border-box',
     minWidth: 0,
     fontSize: '1rem',
     color: fleurimondColors.black,
     lineHeight: 'normal',
     fontWeight: 600,
-    padding: '',
-    height: '100vw',
+    height: '70vw',
     width: '100%',
     backgroundColor: fleurimondColors.white,
   },
@@ -36,8 +35,14 @@ const useStyles = makeStyles({
     color: fleurimondColors.black,
     textDecoration: 'none',
   },
-  cardImage: {
-    paddingTop: '59%',
+  h2: {
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    textAlign: 'center',
+    display: 'block',
+    padding: '23px 2px 13px 0 !important',
+  },
+  gridContainer: {
+    padding: '5% 0 15% ',
   },
 });
 
@@ -55,16 +60,19 @@ const Homepage = () => {
   useEffect(() => {
     getStarWarsFilms();
   }, []);
-  
+
   return (
     <div className={classes.root}>
       <Navbar />
+      {/* Hero unit */}
       <Hero />
+      <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2" className={classes.h2}>
+        Star War Films
+        </Typography>
+      {/* End hero unit */}
       <div className={classes.container}>
-        {/* Hero unit */}
         <Container maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4} style={{ paddingTop: '2.5rem' }}>
+          <Grid container spacing={4} className={classes.gridContainer}>
             {films.map((film, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Animated
@@ -73,12 +81,9 @@ const Homepage = () => {
                   animationOut="slideOutDown"
                   isVisible
                 >
+                  {/* Card unit */}
                   <Card>
-                    <CardMedia
-                      image="https://facetheforce.today/?i=1random/400?r=2"
-                      title="Image title"
-                      className={classes.cardImage}
-                    />
+                    <CardMedia />
                     <CardContent className={classes.h2}>
                       <Typography gutterBottom variant="h5" component="h2" key={film.url}>
                         <Link
@@ -91,7 +96,7 @@ const Homepage = () => {
                           }}
                           className={classes.a}
                         >
-                         
+
                           {film.title}
                         </Link>
                       </Typography>

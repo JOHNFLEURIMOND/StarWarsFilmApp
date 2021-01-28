@@ -13,6 +13,7 @@ import { fleurimondColors } from '../theme';
 
 const useStyles = makeStyles({
   container: {
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     boxSizing: 'border-box',
     fontSize: '1rem',
     color: fleurimondColors.leapingLemon,

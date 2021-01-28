@@ -10,6 +10,7 @@ import { fleurimondColors } from '../theme';
 
 const useStyles = makeStyles({
   nav: {
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     boxSizing: 'border-box',
     minWidth: 0,
     fontSize: '1rem',
@@ -44,31 +45,26 @@ const useStyles = makeStyles({
 const JFHeader = () => {
   const classes = useStyles();
   return (
-    <Animated
-      animationInDelay={0}
-      animationIn="slideInUp"
-      animationOut="slideOutDown"
-      isVisible
-    >
-      <AppBar position="relative" className={classes.nav}>
-        <Toolbar>
-          <Typography variant="h6" className="Navbar" noWrap>
-            <ul className={classes.ul}>
-              <li className={classes.li}>
+    <AppBar position="relative" className={classes.nav}>
+      <Toolbar>
+        <Typography variant="h6" className="Navbar" noWrap>
+          <ul className={classes.ul}>
+            <li className={classes.li}>
+              <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
                 <Link to="/" className={classes.a}>
                   Marvel
                 </Link>
-              </li>
-              <li className={classes.li}>
-                <Link to="/CharacterPage" className={classes.a}>
-                  Characters
+              </Animated>
+            </li>
+            <li className={classes.li}>
+              <Link to="/CharacterPage" className={classes.a}>
+                Characters
                 </Link>
-              </li>
-            </ul>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Animated>
+            </li>
+          </ul>
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 

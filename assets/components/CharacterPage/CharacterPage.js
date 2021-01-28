@@ -14,13 +14,13 @@ import { fleurimondColors } from '../theme';
 
 const useStyles = makeStyles({
   container: {
-    margin: 0,
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     boxSizing: 'border-box',
     fontSize: '1rem',
-    color: fleurimondColors.leapingLemon,
+    margin: 0,
+    color: fleurimondColors.black,
     lineHeight: 'normal',
     fontWeight: 600,
-    padding: '64px 20px 48px',
     width: '100%',
     backgroundColor: fleurimondColors.white,
     textAlign: 'center',
@@ -35,6 +35,37 @@ const useStyles = makeStyles({
     textAlign: 'center',
     padding: '23px 2px 13px 0 !important',
   },
+  button: {
+    marginTop: "3rem",
+    fontSize: "13px",
+    padding: "8px 11px",
+    color: fleurimondColors.leapingLemon,
+    backgroundColor: fleurimondColors.black,
+    borderColor: fleurimondColors.black,
+    borderRadius: '3px',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    cursor: 'pointer',
+    display: 'inline-block',
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    letterSpacing: '0.02em',
+    lineHeight: 1,
+
+    '&:hover,&:active,&:focus': {
+      backgroundColor: fleurimondColors.leapingLemon,
+      borderColor: fleurimondColors.leapingLemon,
+      color: fleurimondColors.black,
+      textDecoration: 'none',
+    },
+
+    '&:disabled': {
+      backgroundColor: fleurimondColors.foam,
+      borderColor: fleurimondColors.foam,
+      color: "#ecf0f3",
+      opacity: 1,
+      pointerEvents: 'none', // counterintuitive but this allows hover events to fire on disabled buttons (e.g. to show a tooltip) - https://jakearchibald.com/2017/events-and-disabled-form-fields/
+    },
+  }
 });
 
 const JFCharacterPage = () => {
@@ -80,10 +111,10 @@ const JFCharacterPage = () => {
   return (
     <div className={classes.container}>
       <Navbar />
-      <Hero />
       {/* Hero unit */}
-      <Container maxWidth="md">
+      <Hero />
         {/* End hero unit */}
+      <Container maxWidth="md">
         <Grid container spacing={4}>
           {characters.map((characters, index) => (
             <Grid item key={index} xs={12} sm={6} md={4}>
@@ -92,7 +123,8 @@ const JFCharacterPage = () => {
                 animationIn="slideInUp"
                 animationOut="slideOutDown"
                 isVisible
-              >
+                >
+                {/* Card unit */}
                 <Card>
                   <CardMedia
                     image="http://facetheforce.today/?i=1random/400?r=2"
@@ -111,9 +143,11 @@ const JFCharacterPage = () => {
         </Grid>
         <button
           onClick={() => history.push("/", { from: "Characters" })}
+          className={classes.button}
         >
           HomePage
             </button>
+
       </Container>
     </div>
   );
