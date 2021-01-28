@@ -110,46 +110,52 @@ const JFCharacterPage = () => {
 
   return (
     <div className={classes.container}>
-      <Navbar />
-      {/* Hero unit */}
-      <Hero />
-        {/* End hero unit */}
-      <Container maxWidth="md">
-        <Grid container spacing={4}>
-          {characters.map((characters, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4}>
-              <Animated
-                animationInDelay={0}
-                animationIn="slideInUp"
-                animationOut="slideOutDown"
-                isVisible
-                >
-                {/* Card unit */}
-                <Card>
-                  <CardMedia
-                    image="http://facetheforce.today/?i=1random/400?r=2"
-                    title="Image title"
-                    className={classes.cardImage}
-                  />
-                  <CardContent className={classes.h2}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {characters.name}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Animated>
-            </Grid>
-          ))}
-        </Grid>
-        <button
-          onClick={() => history.push("/", { from: "Characters" })}
-          className={classes.button}
-        >
-          HomePage
-            </button>
+    <Navbar />
+    {/* Hero unit */}
+    <Hero />
+    {/* End hero unit */}
+    <Container maxWidth="md">
+      <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2" className={classes.title}>
+        {filmTitle}
+      </Typography>
 
-      </Container>
-    </div>
+      <Grid container spacing={4} style={{ paddingTop: '2.5rem' }}>
+        {/* Map thru the state which contains the character Names of selected film and creates a card and renders characters name on the card */}
+
+        {characters.map((character, index) => (
+          <Grid item key={index} xs={12} sm={6} md={4}>
+            <Animated
+              animationInDelay={0}
+              animationIn="slideInUp"
+              animationOut="slideOutDown"
+              isVisible
+            >
+              <Card>
+                <CardMedia
+                  title="Starwars title"
+                  image="https://facetheforce.today/?i=1random/400?r=2"
+                  className={classes.cardImage}
+                />
+                <CardContent className={classes.h2}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {/* Card Info */}
+                    {character}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Animated>
+          </Grid>
+        ))}
+      </Grid>
+      <button
+        onClick={() => history.push("/", { from: "Characters" })}
+        className={classes.button}
+      >
+        HomePage
+          </button>
+
+    </Container>
+  </div>
   );
 };
 

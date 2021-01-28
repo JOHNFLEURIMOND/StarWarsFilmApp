@@ -52,7 +52,7 @@ const JFHeader = () => {
             <li className={classes.li}>
               <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
                 <Link to="/" className={classes.a}>
-                  Marvel
+                  Star Wars
                 </Link>
               </Animated>
             </li>
