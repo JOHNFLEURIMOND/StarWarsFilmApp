@@ -39,7 +39,7 @@ const useStyles = makeStyles({
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     textAlign: 'center',
     display: 'block',
-    padding: '23px 2px 13px 0 !important',
+    paddingTop: '2rem !important',
   },
   gridContainer: {
     padding: '5% 0 15% ',
