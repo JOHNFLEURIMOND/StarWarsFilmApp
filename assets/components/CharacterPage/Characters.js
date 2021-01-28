@@ -39,6 +39,12 @@ const useStyles = makeStyles({
     textAlign: 'center',
     padding: '23px 2px 13px 0 !important',
   },
+  title: {
+    paddingTop: '2rem !important',
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    textAlign: 'center',
+    display: 'block',
+  },
   button: {
     marginTop: "5rem",
     fontSize: "13px",
@@ -112,7 +118,7 @@ const JFCharacter = () => {
       <Hero />
       {/* End hero unit */}
       <Container maxWidth="md">
-        <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2">
+        <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2" className={classes.title}>
           {filmTitle}
         </Typography>
 

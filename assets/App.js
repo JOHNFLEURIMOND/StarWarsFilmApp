@@ -39,7 +39,13 @@ const useStyles = makeStyles({
     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     textAlign: 'center',
     display: 'block',
+    padding: '23px 2px 13px 0 !important',
+  },
+  title: {
     paddingTop: '2rem !important',
+    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    textAlign: 'center',
+    display: 'block',
   },
   gridContainer: {
     padding: '5% 0 15% ',
@@ -66,7 +72,7 @@ const Homepage = () => {
       <Navbar />
       {/* Hero unit */}
       <Hero />
-      <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2" className={classes.h2}>
+      <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2" className={classes.title}>
         Star War Films
         </Typography>
       {/* End hero unit */}
