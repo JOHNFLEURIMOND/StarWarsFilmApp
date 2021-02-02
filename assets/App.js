@@ -15,7 +15,9 @@ import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
 import CharacterPage from './components/CharacterPage/CharacterPage';
 import Characters from './components/CharacterPage/Characters';
+
 import "./index.css";
+
 import { fleurimondColors } from './components/theme';
 
 const useStyles = makeStyles({

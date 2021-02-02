@@ -85,13 +85,16 @@ const JFCharacter = () => {
   const history = useHistory();
   const filmCharacterUrls = history.location.state.filmCharacters;
   const { filmTitle } = history.location.state;
-
+  
   const [characters, setCharacters] = useState([]);
-
+  
   const getCharacters = () => {
     // Create axios request for all characters
     const requests = filmCharacterUrls.map(async url => {
-      const request = await axios.get(url);
+      const HTTPS = "Https://";
+      const sliceHTTPout = url.slice(7, 36);
+      const secureUrl = HTTPS.concat(sliceHTTPout);;
+      const request = await axios.get(secureUrl);
       return request;
     });
 
