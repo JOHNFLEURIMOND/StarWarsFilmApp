@@ -1,10 +1,13 @@
 # :checkered_flag:What It Looks Like :checkered_flag:: 
-
+![StarWarsApp](StarWar.png)
 # My Awesome Project
 Starwars films and Character App
 
-# How It's Made :nut_and_bolt:🔨 :hammer::wrench::
 
+https://john-fleurimonds-starwars-app.netlify.app/
+
+# How It's Made :nut_and_bolt:🔨 :hammer::wrench::
+This is code is done in React, React-Router-Dom, Material-UI
 
 ## Assignment:
  In the following two slides, you see a rough sketch of a web app made for Star Wars fans. Your mission is to implement this functionality in a React app. The implementation must be responsive and should adapt itself to the screen sizes of mobile/desktop. 
