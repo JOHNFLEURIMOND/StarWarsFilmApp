@@ -50,7 +50,11 @@ const JFHeader = () => {
         <Typography variant="h6" className="Navbar" noWrap>
           <ul className={classes.ul}>
             <li className={classes.li}>
-              <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+              <Animated
+                animationIn="bounceInLeft"
+                animationOut="fadeOut"
+                isVisible={true}
+              >
                 <Link to="/" className={classes.a}>
                   Star Wars
                 </Link>
@@ -59,7 +63,7 @@ const JFHeader = () => {
             <li className={classes.li}>
               <Link to="/CharacterPage" className={classes.a}>
                 Characters
-                </Link>
+              </Link>
             </li>
           </ul>
         </Typography>

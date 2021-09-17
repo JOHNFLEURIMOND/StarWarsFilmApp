@@ -38,9 +38,9 @@ const useStyles = makeStyles({
     padding: '23px 2px 13px 0 !important',
   },
   button: {
-    marginTop: "3rem",
-    fontSize: "13px",
-    padding: "8px 11px",
+    marginTop: '3rem',
+    fontSize: '13px',
+    padding: '8px 11px',
     color: fleurimondColors.leapingLemon,
     backgroundColor: fleurimondColors.black,
     borderColor: fleurimondColors.black,
@@ -63,11 +63,11 @@ const useStyles = makeStyles({
     '&:disabled': {
       backgroundColor: fleurimondColors.foam,
       borderColor: fleurimondColors.foam,
-      color: "#ecf0f3",
+      color: '#ecf0f3',
       opacity: 1,
       pointerEvents: 'none', // counterintuitive but this allows hover events to fire on disabled buttons (e.g. to show a tooltip) - https://jakearchibald.com/2017/events-and-disabled-form-fields/
     },
-  }
+  },
 });
 
 const JFCharacterPage = () => {
@@ -118,8 +118,14 @@ const JFCharacterPage = () => {
       <Hero />
       {/* End hero unit */}
       <Container maxWidth="md">
-        <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2" className={classes.title}>
-         Characters
+        <Typography
+          gutterBottom
+          variant="h1"
+          fontWeight="fontWeightRegular"
+          component="h2"
+          className={classes.title}
+        >
+          Characters
         </Typography>
 
         <Grid container spacing={4} style={{ paddingTop: '2.5rem' }}>
@@ -151,12 +157,11 @@ const JFCharacterPage = () => {
           ))}
         </Grid>
         <button
-          onClick={() => history.push("/", { from: "Characters" })}
+          onClick={() => history.push('/', { from: 'Characters' })}
           className={classes.button}
         >
           HomePage
-          </button>
-
+        </button>
       </Container>
     </div>
   );

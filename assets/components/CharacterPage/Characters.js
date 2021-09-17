@@ -12,7 +12,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Hero from '../Hero/Hero';
 import Navbar from '../Navbar/Navbar';
 
-import "./../../index.css";
+import './../../index.css';
 
 import { fleurimondColors } from '../theme';
 
@@ -47,9 +47,9 @@ const useStyles = makeStyles({
     display: 'block',
   },
   button: {
-    marginTop: "5rem",
-    fontSize: "13px",
-    padding: "8px 11px",
+    marginTop: '5rem',
+    fontSize: '13px',
+    padding: '8px 11px',
     color: fleurimondColors.leapingLemon,
     backgroundColor: fleurimondColors.black,
     borderColor: fleurimondColors.black,
@@ -72,11 +72,11 @@ const useStyles = makeStyles({
     '&:disabled': {
       backgroundColor: fleurimondColors.foam,
       borderColor: fleurimondColors.foam,
-      color: "#ecf0f3",
+      color: '#ecf0f3',
       opacity: 1,
       pointerEvents: 'none', // counterintuitive but this allows hover events to fire on disabled buttons (e.g. to show a tooltip) - https://jakearchibald.com/2017/events-and-disabled-form-fields/
     },
-  }
+  },
 });
 
 const JFCharacter = () => {
@@ -85,15 +85,15 @@ const JFCharacter = () => {
   const history = useHistory();
   const filmCharacterUrls = history.location.state.filmCharacters;
   const { filmTitle } = history.location.state;
-  
+
   const [characters, setCharacters] = useState([]);
-  
+
   const getCharacters = () => {
     // Create axios request for all characters
     const requests = filmCharacterUrls.map(async url => {
-      const HTTPS = "Https://";
+      const HTTPS = 'Https://';
       const sliceHTTPout = url.slice(7, 36);
-      const secureUrl = HTTPS.concat(sliceHTTPout);;
+      const secureUrl = HTTPS.concat(sliceHTTPout);
       const request = await axios.get(secureUrl);
       return request;
     });
@@ -122,7 +122,13 @@ const JFCharacter = () => {
       <Hero />
       {/* End hero unit */}
       <Container maxWidth="md">
-        <Typography gutterBottom variant="h1" fontWeight="fontWeightRegular" component="h2" className={classes.title}>
+        <Typography
+          gutterBottom
+          variant="h1"
+          fontWeight="fontWeightRegular"
+          component="h2"
+          className={classes.title}
+        >
           {filmTitle}
         </Typography>
 
@@ -155,12 +161,11 @@ const JFCharacter = () => {
           ))}
         </Grid>
         <button
-          onClick={() => history.push("/", { from: "Characters" })}
+          onClick={() => history.push('/', { from: 'Characters' })}
           className={classes.button}
         >
           HomePage
-            </button>
-
+        </button>
       </Container>
     </div>
   );
